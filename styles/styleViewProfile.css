@@ -1,0 +1,106 @@
+* { 
+	margin: 0;
+	padding: 0;
+}
+
+#headerNav {
+	margin-bottom: 50px;
+}
+
+headerNav.img {
+	width: 150px;
+	height: 150px;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 97%;
+  height: 40px;
+}
+
+.floatRight {
+	float: right;
+}
+
+.floatLeft {
+	float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
+  line-height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+li img {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+}
+
+#logo {
+	font-size: 30px;
+}
+
+#fakeLink {
+	cursor:pointer;
+	color:blue;
+	text-decoration:underline;
+}
+
+#reportOptions {
+	width: 400px;
+	height: 400px;
+	background-color: #11aa22bb;
+	
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+}
+
+.visible {
+	visibility: visible;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.option {
+	width: 100%;
+	height: 50px;
+}
+
+#closeButton{
+	width: 20px;
+	height: 20px;
+	float: right;
+	filter: opacity(20%);
+	filter: brightness(0%);
+	transition: filter 0.1s;
+}
+
+#closeButton:hover {
+	filter: opacity(100%);
+	filter: brightness(100%);
+}

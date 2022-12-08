@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html style="height: 100vh;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CliffsUnited</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/multirange.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Toggle-Checkbox.css">
+</head>
+
+<body class="d-flex flex-column" style="height: 100%;padding: 5px;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="padding-right: 0px;padding-left: 0px;">
+        <div class="container"><a class="navbar-brand" href="#"><img id="logo" src="assets/img/logo.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <form class="form-inline mx-auto" target="_self" style="width: 50%;">
+                    <div class="form-group" style="width: 100%;"><input class="form-control search-field" type="search" id="search-field" name="search" placeholder="Search Locations or People" style="width: 90%;margin: 0px;color: rgb(0,0,0);"><label for="search-field" style="width: 10%;"><i class="fa fa-search"></i></label></div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Username<img id="profile-picture" src="assets/img/defaultProfile.jpg"></a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Edit Profile</a><a class="dropdown-item" role="presentation" href="#">Admin Dashboard</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div id="page-contents" style="overflow: hidden;">
+        <div class="row" style="height: 100%;overflow: auto;overflow-y: hidden;">
+            <div class="col-md-6 col-xl-5 offset-xl-0 d-flex flex-column justify-content-center" id="location-finder" style="margin-bottom: 10px;">
+                <div id="map-filters" style="margin: 0px;padding: 5px;">
+                    <form class="d-flex flex-row flex-fill align-self-start flex-wrap" style="margin: 5px;height: 100%;">
+                        <div class="text-left d-flex float-left flex-column flex-grow-1 col-md-6" id="filter-left" style="padding: 0px;padding-right: 5px;padding-left: 5px;">
+                            <h2>Filters:</h2>
+                            <div class="form-group d-flex"><label style="margin-bottom: 0;margin-left: 0;margin-right: 10px;">Height</label><input class="form-control-range float-left" type="range"></div>
+                            <div class="form-group d-flex" style="margin-bottom: 16px;margin-right: 0;margin-left: 0;"><label style="margin-bottom: 0px;margin-right: 10px;">Depth</label><input class="form-control-range" type="range"></div>
+                            <div class="form-group d-flex" style="margin-bottom: 5px;"><label class="text-nowrap d-xl-flex align-items-xl-center" style="margin-right: 10px;margin-bottom: 0px;width: 50%;">Location Type</label>
+                                <div class="dropdown dropdown-checkbox" style="width: 50%;"><button class="btn btn-primary dropdown-toggle btn-checkbox" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">Select...</button>
+                                    <div class="dropdown-menu"
+                                        role="menu" style="padding-right: 0px;padding-left: 10px;">
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Waterfall</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Lake</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex flex-grow-0" style="margin-bottom: 5px;"><label class="text-nowrap float-left d-xl-flex align-items-xl-center" style="margin-right: 10px;margin-bottom: 0px;width: 50%;">Spot Type</label>
+                                <div class="dropdown dropdown-checkbox"><button class="btn btn-primary dropdown-toggle btn-checkbox" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">Select...</button>
+                                    <div class="dropdown-menu"
+                                        role="menu" style="padding-right: 0px;padding-left: 10px;">
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Bridge</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Cliff</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left d-flex float-right flex-column flex-grow-1 col-md-6" id="filter-right" style="padding: 0px;padding-left: 5px;padding-right: 5px;">
+                            <div class="form-group d-flex" style="margin-bottom: 5px;"><label class="text-nowrap d-xl-flex align-items-xl-center" style="margin-right: 10px;margin-bottom: 0px;width: 50%;">Logistics</label>
+                                <div class="dropdown dropdown-checkbox"><button class="btn btn-primary dropdown-toggle btn-checkbox" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgb(255,255,255);color: rgb(0,0,0);">Select...</button>
+                                    <div class="dropdown-menu"
+                                        role="menu" style="padding-right: 0px;padding-left: 10px;">
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Public Location</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Paid Entrance</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Open</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Has Parking</label></div>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Locals Only (No Tourists)</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group d-flex" style="margin-top: 0px;margin-bottom: 5px;"><label class="text-nowrap d-xl-flex align-items-xl-center" style="margin-right: 10px;margin-bottom: 0px;width: 50%;">Within Miles</label><input class="form-control dropdown-checkbox" type="number" min="1" max="1000" step="1"
+                                    value="20"></div><button class="btn btn-primary text-left d-xl-flex align-self-end" type="button">Find Locations</button></div>
+                    </form>
+                </div>
+                <div id="mapinfo" style="overflow: hidden;border-radius: 10px;">
+                    <p>10 Locations found in 0.5 seconds</p><iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJwOnEohO28bSWrLXfJWOg2iRRFNUd8QU&amp;q=United+States&amp;zoom=4" width="100%" height="400" style="border-radius: 10px;"></iframe></div>
+            </div>
+            <div class="col-md-6 col-xl-7" id="overview" style="margin-bottom: 10px;height: 100%;overflow: auto;overflow-y: hidden;">
+                <div id="view-current-location" style="height: 100%;overflow: auto;overflow-y: auto;">
+                    <div class="row" id="location-section" style="margin: 0px;padding: 5px;">
+                        <div class="col d-flex flex-row flex-fill align-self-start flex-wrap" style="padding: 0;">
+                            <div class="flex-grow-1 data-container-half" id="location-data" style="margin: 5px;padding: 5px;background-color: #ddd;"><img id="location-image" src="assets/img/defaultLocation.png">
+                                <p><strong>Last Updated on:</strong> 1/1/2020 <strong>by:</strong> SomeUser</p>
+                            </div>
+                            <div class="flex-grow-1 flex-shrink-0 data-container-half" id="location-address" style="margin: 5px;padding: 5px;background-color: #ddd;">
+                                <div style="height: 40px;">
+                                    <h1 class="float-left" style="margin-bottom: 0;margin-right: 5px;">Twisted Falls</h1>
+                                    <div class="dropdown d-inline float-right" style="margin-left: 5px;"><button class="btn btn-primary dropdown-toggle float-right" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fa fa-align-justify"></i></button>
+                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Edit Location</a><a class="dropdown-item" role="presentation" href="#">Add New Location</a><a class="dropdown-item" role="presentation" href="#">View Changelog</a></div>
+                                    </div>
+                                </div>
+                                <p>123 Addr St, NC 27040, USA</p>
+                                <p>-12.345N, 8.346W</p>
+                            </div>
+                            <div class="flex-grow-1 flex-shrink-0 data-container" id="location-spot" style="background-color: #ddd;padding: 5px;margin: 5px;">
+                                <h2 class="text-nowrap">Spot / Takeoffs</h2>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong># of Spots:</strong></td>
+                                                <td class="text-left">4</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Height Range:</strong></td>
+                                                <td class="text-left">5ft - 60ft</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Depth Range:</strong></td>
+                                                <td class="text-left">Unknown</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Gap Range:</strong></td>
+                                                <td class="text-left">0ft - 5ft</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 flex-shrink-0 data-container" id="location-logistics" style="background-color: #ddd;margin: 5px;padding: 5px;">
+                                <h2>Logistics</h2>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>Public Spot:</strong></td>
+                                                <td class="text-left">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Paid Entrance:</strong></td>
+                                                <td class="text-left">No</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Open:</strong></td>
+                                                <td class="text-left">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Has Parking:</strong></td>
+                                                <td class="text-left">Yes</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 flex-shrink-0 data-container" id="location-hike" style="background-color: #ddd;padding: 5px;margin: 5px;">
+                                <h2>Hike Info</h2>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-right"><strong>Miles:</strong></td>
+                                                <td class="text-left">0.5</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-right"><strong>Difficulty:</strong></td>
+                                                <td class="text-left">Hard</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="spot-section" style="padding: 5px;margin: 0px;margin-top: 10px;">
+                        <div class="col d-flex flex-row flex-fill justify-content-center align-content-center align-self-start flex-wrap" style="padding: 0;overflow: hidden;">
+                            <div class="flex-grow-1 spot-container spot-selected" style="padding: 5px;margin: 5px;">
+                                <h3>Main Fall</h3><img class="float-left spot-image" src="assets/img/defaultLocation.png">
+                                <div class="float-left spot-data">
+                                    <p><strong>Type: </strong>Cliff</p>
+                                    <p><strong>Height:</strong> 40ft</p>
+                                    <p><strong>Depth: </strong>Unknown</p>
+                                    <p><strong>Gap:</strong> 2ft</p>
+                                    <p><strong>Runnable:</strong> No</p>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 spot-container spot-selected" style="margin: 5px;padding: 5px;">
+                                <h3>2nd Fall</h3><img class="float-left spot-image" src="assets/img/defaultLocation.png">
+                                <div class="float-left spot-data hidden">
+                                    <p><strong>Type: </strong>Cliff</p>
+                                    <p><strong>Height:</strong> 40ft</p>
+                                    <p><strong>Depth: </strong>Unknown</p>
+                                    <p><strong>Gap:</strong> 2ft</p>
+                                    <p><strong>Runnable:</strong> No</p>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 spot-container spot-selected" style="margin: 5px;padding: 5px;">
+                                <h3>3rd Fall</h3><img class="float-left spot-image" src="assets/img/defaultLocation.png">
+                                <div class="float-left spot-data hidden">
+                                    <p><strong>Type: </strong>Cliff</p>
+                                    <p><strong>Height:</strong> 40ft</p>
+                                    <p><strong>Depth: </strong>Unknown</p>
+                                    <p><strong>Gap:</strong> 2ft</p>
+                                    <p><strong>Runnable:</strong> No</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="comment-section" style="margin: 0px;padding: 5px;margin-top: 10px;overflow: auto;">
+                        <div class="col" style="padding-right: 5px;padding-left: 5px;overflow: auto;overflow-y: auto;">
+                            <div id="comment-container">
+                                <div class="post-comment">
+                                    <h1>Leave a Comment</h1>
+                                    <div class="d-flex comment-area"><img src="assets/img/defaultProfile.jpg" style="margin-left: 0px;margin-right: 5px;">
+                                        <form class="flex-grow-1">
+                                            <div class="form-group"><textarea class="form-control" rows="3" placeholder="Comment..." style="height: 75px;"></textarea><button class="btn btn-primary float-right" type="button" style="margin-top: 5px;">Comment</button></div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="display-comment">
+                                    <div class="comment-box"><img class="float-left" src="assets/img/defaultProfile.jpg" style="margin-right: 5px;">
+                                        <div class="d-flex">
+                                            <p class="float-left post-date"><strong>SomeUser</strong> commented on 10/15/2020</p><a class="d-xl-flex justify-content-xl-start align-items-xl-center" href="#" style="color: rgb(51,0,255);font-size: 10px;margin-left: 5px;">[Report]</a></div>
+                                        <p
+                                            class="comment-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                            commodo consequat.<br><br></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-edit-location" class="hidden" style="background-color: #eee;margin: 0px;padding: 5px;border-radius: 10px;height: 100%;overflow-y: auto;">
+                    <div class="row" style="margin: 0px;padding: 0px;">
+                        <div class="col" style="padding: 5px;"><a class="float-right" href="#" style="color: rgb(0,25,255);">[Go Back]</a>
+                            <h1>Add / Edit Location</h1>
+                            <form style="overflow: hidden;">
+                                <div class="d-flex flex-row" id="edit-location">
+                                    <div class="d-flex flex-column flex-grow-1" id="edit-location-topgroup" style="margin-right: 5px;width: 50%;">
+                                        <div class="d-flex flex-grow-0">
+                                            <div class="form-group d-flex float-left flex-column" style="width: 150px;margin-right: 5px;"><label style="margin: 0px;padding: 0px;"><strong>Main Photo</strong></label><img id="edit-location-img" src="assets/img/defaultLocation.png" style="margin-bottom: 5px;"><button class="btn btn-primary" id="edit-location-upload-photo"
+                                                    type="button" style="padding: 0px;">Upload Photo</button></div>
+                                            <div class="d-flex float-left flex-column" id="edit-location-misc" style="margin-left: 5px;">
+                                                <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Location Name</strong></label><input class="form-control" type="text"></div>
+                                                <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Location Type</strong></label><input class="form-control" type="text"></div>
+                                                <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Parking Description</strong></label><input class="form-control" type="text"></div>
+                                                <div class="d-flex">
+                                                    <div class="form-group float-left flex-grow-1" style="margin-right: 5px;margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Hike Miles</strong></label><input class="form-control" type="text"></div>
+                                                    <div class="form-group float-left flex-grow-1" style="margin-left: 5px;margin-bottom: 0px;"><label class="text-nowrap" style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Difficulty</strong><br></label><input class="form-control" type="text"></div>
+                                                </div>
+                                                <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Other Info</strong></label><input class="form-control" type="text"></div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex d-xl-flex flex-row flex-wrap" id="edit-location-topcheckboxes">
+                                            <div class="form-check text-nowrap" style="margin: 5px;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"><strong>Public Location</strong></label></div>
+                                            <div class="form-check text-nowrap" style="margin: 5px;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"><strong>Paid Entrance</strong></label></div>
+                                            <div class="form-check text-nowrap" style="margin: 5px;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"><strong>Open</strong></label></div>
+                                            <div class="form-check text-nowrap" style="margin: 5px;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"><strong>Has Parking</strong></label></div>
+                                            <div class="form-check text-nowrap" style="margin: 5px;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"><strong>Locals Only (No Tourists)</strong></label></div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column flex-grow-1" id="edit-location-topright" style="margin-left: 5px;">
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Address</strong></label><input class="form-control" type="text"></div>
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>City</strong></label><input class="form-control" type="text"></div>
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>State</strong></label><input class="form-control" type="text"></div>
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Zip</strong></label><input class="form-control" type="text"></div>
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Country</strong></label><input class="form-control" type="text"></div>
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Latitude</strong></label><input class="form-control" type="text"></div>
+                                        <div class="form-group float-left" style="margin-bottom: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Longitude</strong></label><input class="form-control" type="text"></div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex" id="edit-spot" style="margin-top: 10px;">
+                                    <div class="d-flex flex-column flex-grow-1" id="edit-spot-left" style="width: 50%;margin: 0px;margin-right: 5px;background-color: #ddd;border-radius: 5px;padding: 5px;position: relative;">
+                                        <h2>Spot List (Select to Edit)</h2>
+                                        <ul class="list-group" id="edit-spot-listview" style="margin-top: 10px;">
+                                            <li class="list-group-item" style="padding: 0px;padding-top: 10px;padding-bottom: 10px;"><button class="btn btn-primary" type="button" style="color: rgb(0,0,0);padding: 0px;margin: 0px;">Upper Waterfall</button></li>
+                                            <li class="list-group-item" style="padding: 0px;padding-top: 10px;padding-bottom: 10px;"><button class="btn btn-primary" type="button" style="color: rgb(0,0,0);padding: 0px;margin: 0px;">Lower Waterfall</button></li>
+                                        </ul>
+                                        <div class="d-flex flex-grow-1 justify-content-between align-items-end"><button class="btn btn-primary text-center d-none d-xl-flex align-items-xl-center" type="button" style="padding: 0px;padding-top: 0px;padding-left: 10px;padding-right: 10px;margin-top: 5px;">Add Spot</button>
+                                            <button
+                                                class="btn btn-primary text-left float-right" type="button" style="padding: 0px;padding-top: 0px;padding-left: 10px;padding-right: 10px;margin-top: 5px;">Delete Spot</button>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-grow-1" id="edit-spot-right" style="width: 50%;margin: 0px;margin-left: 5px;">
+                                        <div class="flex-grow-1" id="edit-spot-right-left" style="/*width: 50%;*/margin-right: 5px;">
+                                            <div class="form-group d-flex float-left flex-column" style="width: 150px;"><label style="margin: 0px;padding: 0px;"><strong>Spot Photo</strong></label><img id="edit-location-img" src="assets/img/defaultLocation.png" style="margin-bottom: 5px;"><button class="btn btn-primary" id="edit-location-upload-photo"
+                                                    type="button" style="padding: 0px;">Upload Photo</button></div>
+                                        </div>
+                                        <div class="d-flex flex-column flex-grow-1" id="edit-spot-right-right" style="width: 50%;margin-left: 5px;">
+                                            <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Spot Name</strong></label><input class="form-control" type="text"></div>
+                                            <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Spot Type</strong></label><input class="form-control" type="text"></div>
+                                            <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Height (ft)</strong></label><input class="form-control" type="text"></div>
+                                            <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Pool Depth(ft)</strong></label><input class="form-control" type="text"></div>
+                                            <div class="form-group float-left" style="margin: 0px;"><label style="margin: 0px;margin-top: 0px;padding: 0px;"><strong>Gap (ft)</strong></label><input class="form-control" type="text"></div>
+                                            <div class="form-check text-nowrap" style="margin: 5px;"><input class="form-check-input" type="checkbox" id="formCheck-3"><label class="form-check-label" for="formCheck-3"><strong>Runnable</strong></label></div>
+                                        </div>
+                                    </div>
+                                </div><button class="btn btn-primary float-right" type="button" style="margin-top: 10px;">Save Changes</button></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-column hidden" id="location-changelog" style="background-color: #eee;border-radius: 10px;padding: 5px;height: 100%;overflow: auto;overflow-y: auto;"><a class="float-right" href="#" style="color: rgb(0,25,255);">[Go Back]</a>
+                    <h1>Changelog</h1>
+                    <p style="font-size: 10px;margin: 0px;padding: 0px;">10 Changes Made</p>
+                    <div class="d-flex flex-column" id="changelog-container" style="height: 100%;padding: 0px;padding-left: 5px;padding-right: 5px;">
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>AnotherUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p
+                                class="hidden">Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Expand]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                        <div class="changelog-card" style="width: 100%;background-color: #ddd;padding: 5px;margin-top: 5px;margin-bottom: 5px;">
+                            <p><a href="#" style="color: rgb(36,0,255);"><strong>SomeUser</strong></a>&nbsp;<strong>1/1/2019 3:56PM</strong><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);">[Report for Vandalism]</a></p>
+                            <p>Location Name: Some New Name</p><a class="float-right" href="#" style="font-size: 12px;color: rgb(0,10,255);text-align: center;width: 100%;">[Collapse]</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/multirange.js"></script>
+    <script src="assets/js/Toggle-Checkbox.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html style="height: 100vh;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>CliffsUnited</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/multirange.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Toggle-Checkbox.css">
+</head>
+
+<body class="d-flex flex-column" style="height: 100%;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search" style="padding-right: 0px;padding-left: 0px;">
+        <div class="container"><a class="navbar-brand" href="#"><img id="logo" src="assets/img/logo.png"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <form class="form-inline mx-auto" target="_self" style="width: 50%;">
+                    <div class="form-group" style="width: 100%;"><input class="form-control search-field" type="search" id="search-field" name="search" placeholder="Search Locations or People" style="width: 90%;margin: 0px;color: rgb(0,0,0);"><label for="search-field" style="width: 10%;"><i class="fa fa-search"></i></label></div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">Username<img id="profile-picture" src="assets/img/defaultProfile.jpg"></a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Edit Profile</a><a class="dropdown-item" role="presentation" href="#">Admin Dashboard</a><a class="dropdown-item" role="presentation" href="#">Logout</a></div>
+                    </li>
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="d-flex flex-grow-1" id="page-contents" style="overflow: hidden;">
+        <div class="d-flex flex-column flex-grow-0" id="active-report-list" style="background-color: #eee;margin: 5px;padding: 5px;border-radius: 10px;width: 20%;min-width: 250px;">
+            <h2 style="text-align: center;">Reports</h2>
+            <div class="table-responsive" style="width: 100%;margin-top: 20px;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Username</th>
+                            <th class="text-center"># Active Reports</th>
+                            <th class="text-center">Severity</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr class="clickable-row is-selected">
+                            <td>12</td>
+                            <td>4</td>
+                            <td>8</td>
+                        </tr>
+                        <tr class="clickable-row">
+                            <td>3</td>
+                            <td>1</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-grow-1" id="page-tabs" style="padding: 5px;overflow: auto;overflow-y: hidden;">
+            <div class="d-flex flex-column" style="background-color: #eee;border-radius: 10px;overflow: auto;overflow-y: hidden;">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1"><strong>Details</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2"><strong>Account Info</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-3"><strong>Banned Users</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-4"><strong>Moderator History</strong></a></li>
+                </ul>
+                <div class="tab-content flex-grow-1" style="margin: 5px;padding: 5px;overflow: auto;">
+                    <div class="tab-pane active" role="tabpanel" id="tab-1" style="overflow-y: auto;">
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1">
+                                    <p><strong>Vandalism on&nbsp;</strong></p><a href="#"><strong>Twisted Falls</strong></a>
+                                    <div class="d-flex flex-grow-1">
+                                        <p class="text-right flex-grow-1"><strong>Status:&nbsp;</strong></p>
+                                        <p class="text-left flex-grow-1" style="color: rgb(0,174,7);"><strong>Active</strong></p>
+                                        <p class="float-right" style="font-size: 12px;">2/2/2020</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <p style="font-size: 12px;"><strong>Submitted By:&nbsp;</strong></p><a href="#" style="font-size: 12px;"><strong>someUser</strong></a></div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <div class="flex-grow-1" style="width: 50%;">
+                                    <p><strong>Before:</strong></p>
+                                    <p style="font-size: 14px;">Address: 123 Addr St, NC, 27040</p>
+                                </div>
+                                <div class="flex-grow-1" style="width: 50%;">
+                                    <p><strong>After:</strong></p>
+                                    <p style="font-size: 14px;">Address: BLANK</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row report-options" style="margin-top: 5px;"><button class="btn btn-primary float-left" type="button">Innocent</button><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;">[Collapse]</a><button class="btn btn-primary float-right" type="button">Guilty</button></div>
+                        </div>
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1">
+                                    <p><strong>Inappropriate PFP on&nbsp;</strong></p><a href="#"><strong>thisUser</strong></a>
+                                    <div class="d-flex flex-grow-1">
+                                        <p class="text-right flex-grow-1"><strong>Status:&nbsp;</strong></p>
+                                        <p class="text-left flex-grow-1" style="color: rgb(0,174,7);"><strong>Active</strong></p>
+                                        <p class="float-right" style="font-size: 12px;">1/1/2020</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <p style="font-size: 12px;"><strong>Submitted By:&nbsp;</strong></p><a href="#" style="font-size: 12px;"><strong>anotherUser</strong></a></div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;"><img src="assets/img/defaultProfile.jpg">
+                                <p style="font-size: 14px;">Uploaded on:&nbsp;12/12/2019</p>
+                            </div>
+                            <div class="d-flex flex-row report-options" style="margin-top: 5px;"><button class="btn btn-primary float-left" type="button">Innocent</button><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;">[Collapse]</a><button class="btn btn-primary float-right" type="button">Guilty</button></div>
+                        </div>
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1">
+                                    <p><strong>Inappropriate Description on&nbsp;</strong></p><a href="#"><strong>thisUser</strong></a>
+                                    <div class="d-flex flex-grow-1">
+                                        <p class="text-right flex-grow-1"><strong>Status:&nbsp;</strong></p>
+                                        <p class="text-left flex-grow-1" style="color: rgb(174,10,0);"><strong>Closed</strong></p>
+                                        <p class="float-right" style="font-size: 12px;">12/12/2019</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <p style="font-size: 12px;"><strong>Submitted By:&nbsp;</strong></p><a href="#" style="font-size: 12px;"><strong>someUser</strong></a>
+                                    <p class="text-right flex-grow-1" style="font-size: 12px;"><strong>Closed By:&nbsp;</strong></p><a class="flex-grow-1" href="#" style="font-size: 12px;"><strong>someModerator</strong></a></div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <p style="font-size: 14px;">Description: Some bad description with bad words and things like that. maybe anti-semetic talk idk,</p>
+                            </div>
+                            <div class="d-flex flex-row report-options" style="margin-top: 5px;"><button class="btn btn-primary float-left invisible" type="button">Innocent</button><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;">[Collapse]</a><button class="btn btn-primary float-right selected-report-btn"
+                                    type="button">Guilty</button></div>
+                        </div>
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1">
+                                    <p><strong>Spam on&nbsp;</strong></p><a href="#"><strong>Twisted Falls</strong></a>
+                                    <p><strong>&nbsp;by&nbsp;</strong></p><a href="#"><strong>thisUser</strong></a>
+                                    <div class="d-flex flex-grow-1">
+                                        <p class="text-right flex-grow-1"><strong>Status:&nbsp;</strong></p>
+                                        <p class="text-left flex-grow-1" style="color: rgb(0,174,7);"><strong>Active</strong></p>
+                                        <p class="float-right" style="font-size: 12px;">11/2/2019</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <p style="font-size: 12px;"><strong>Submitted By:&nbsp;</strong></p><a href="#" style="font-size: 12px;"><strong>someUser</strong></a></div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <p style="font-size: 14px;">Comment: "SPAM SPAM SPAM SPAM ect..."</p>
+                            </div>
+                            <div class="d-flex flex-row report-options" style="margin-top: 5px;"><button class="btn btn-primary float-left" type="button">Innocent</button><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;">[Collapse]</a><button class="btn btn-primary float-right" type="button">Guilty</button></div>
+                        </div>
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1">
+                                    <p><strong>Hate Speech on&nbsp;</strong></p><a href="#"><strong>Twisted Falls</strong></a>
+                                    <p><strong>&nbsp;by&nbsp;</strong></p><a href="#"><strong>thisUser</strong></a>
+                                    <div class="d-flex flex-grow-1">
+                                        <p class="text-right flex-grow-1"><strong>Status:&nbsp;</strong></p>
+                                        <p class="text-left flex-grow-1" style="color: rgb(0,174,7);"><strong>Active</strong></p>
+                                        <p class="float-right" style="font-size: 12px;">11/2/2019</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex">
+                                    <p style="font-size: 12px;"><strong>Submitted By:&nbsp;</strong></p><a href="#" style="font-size: 12px;"><strong>someUser</strong></a></div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <p style="font-size: 14px;">Comment: "Some hate Speech..."</p>
+                            </div>
+                            <div class="d-flex flex-row report-options" style="margin-top: 5px;"><button class="btn btn-primary float-left" type="button">Innocent</button><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;">[Collapse]</a><button class="btn btn-primary float-right" type="button">Guilty</button></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-2">
+                        <div class="d-flex flex-column" style="margin-bottom: 10px;">
+                            <div class="d-flex flex-row">
+                                <h1 style="font-size: 25px;margin-right: 5px;margin-bottom: 0px;">Account Details</h1><input type="text" style="margin-left: 5px;padding: 0px;height: 30px;width: 50%;"></div>
+                            <div class="d-flex flex-column">
+                                <div class="d-flex flex-row">
+                                    <p style="font-size: 14px;"><strong>Account Type:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">User</p>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <p style="font-size: 14px;"><strong>ID:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">123</p>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <p style="font-size: 14px;"><strong>Username:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">someUser</p>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <p style="font-size: 14px;"><strong>Users Invited:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">5</p>
+                                </div>
+                                <div class="d-flex flex-row" style="margin-top: 10px;">
+                                    <p style="font-size: 14px;"><strong>Total Reports:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">12</p>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <p style="font-size: 14px;"><strong>Active / Inactive:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">3 / 9</p>
+                                </div>
+                                <div class="d-flex flex-row" style="margin-top: 10px;">
+                                    <p style="font-size: 14px;"><strong>Total Severity:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">20</p>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <p style="font-size: 14px;"><strong>Active / Inactive:&nbsp;</strong></p>
+                                    <p style="font-size: 14px;">7 / 13</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 10px;margin-bottom: 5px;">
+                            <h1 style="font-size: 25px;margin-right: 5px;margin-bottom: 0px;">Priviliges</h1>
+                            <div class="table-responsive" style="width: 50%;">
+                                <table class="table">
+                                    <tbody>
+                                        <tr class="d-flex flex-row">
+                                            <td class="text-right" style="width: 120px;"><strong>Searchable:</strong></td>
+                                            <td class="d-flex flex-grow-1 justify-content-center align-items-center" style="width: 70px;"><input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" data-width="50" data-height="20"></td>
+                                            <td class="text-left flex-grow-1 justify-content-end align-items-center"><strong>Disabled For:&nbsp;</strong><select><option value="1" selected="">1 Day</option><option value="2">1 Week</option><option value="3">2 Weeks</option><option value="4">1 Month</option><option value="5">2 Months</option><option value="6">6 Months</option><option value="7">1 Year</option><option value="8">Forever</option></select></td>
+                                        </tr>
+                                        <tr class="d-flex flex-row">
+                                            <td class="text-right" style="width: 120px;"><strong>Can Comment:</strong></td>
+                                            <td class="d-flex flex-grow-1 justify-content-center align-items-center" style="width: 70px;"><input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" data-width="50" data-height="20"></td>
+                                            <td class="text-left flex-grow-1 justify-content-end align-items-center"><strong>Disabled For:&nbsp;</strong><select><option value="1" selected="">1 Day</option><option value="2">1 Week</option><option value="3">2 Weeks</option><option value="4">1 Month</option><option value="5">2 Months</option><option value="6">6 Months</option><option value="7">1 Year</option><option value="8">Forever</option></select></td>
+                                        </tr>
+                                        <tr class="d-flex flex-row">
+                                            <td class="text-right" style="width: 120px;"><strong>Can Edit Content:</strong></td>
+                                            <td class="d-flex flex-grow-1 justify-content-center align-items-center" style="width: 70px;"><input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" data-width="50" data-height="20"></td>
+                                            <td class="text-left flex-grow-1 justify-content-end align-items-center"><strong>Disabled For:&nbsp;</strong><select><option value="1" selected="">1 Day</option><option value="2">1 Week</option><option value="3">2 Weeks</option><option value="4">1 Month</option><option value="5">2 Months</option><option value="6">6 Months</option><option value="7">1 Year</option><option value="8">Forever</option></select></td>
+                                        </tr>
+                                        <tr class="d-flex flex-row">
+                                            <td class="text-right" style="width: 120px;"><strong>Can Edit Profile:</strong></td>
+                                            <td class="d-flex flex-grow-1 justify-content-center align-items-center" style="width: 70px;"><input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" data-width="50" data-height="20"></td>
+                                            <td class="text-left flex-grow-1 justify-content-end align-items-center"><strong>Disabled For:&nbsp;</strong><select><option value="1" selected="">1 Day</option><option value="2">1 Week</option><option value="3">2 Weeks</option><option value="4">1 Month</option><option value="5">2 Months</option><option value="6">6 Months</option><option value="7">1 Year</option><option value="8">Forever</option></select></td>
+                                        </tr>
+                                        <tr class="d-flex flex-row">
+                                            <td class="text-right" style="width: 120px;"><strong>Can Invite Users:</strong></td>
+                                            <td class="d-flex flex-grow-1 justify-content-center align-items-center" style="width: 70px;"><input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" data-width="50" data-height="20"></td>
+                                            <td class="text-left flex-grow-1 justify-content-end align-items-center"><strong>Disabled For:&nbsp;</strong><select><option value="1" selected="">1 Day</option><option value="2">1 Week</option><option value="3">2 Weeks</option><option value="4">1 Month</option><option value="5">2 Months</option><option value="6">6 Months</option><option value="7">1 Year</option><option value="8">Forever</option></select></td>
+                                        </tr>
+                                        <tr class="d-flex flex-row">
+                                            <td class="text-right" style="width: 120px;"><strong>Banned:</strong></td>
+                                            <td class="d-flex flex-grow-1 justify-content-center align-items-center" style="width: 70px;"><input type="checkbox" data-toggle="toggle" data-on="Yes" data-off="No" data-onstyle="primary" data-offstyle="danger" data-width="50" data-height="20"></td>
+                                            <td class="text-left flex-grow-1 justify-content-end align-items-center"><strong>Disabled For:&nbsp;</strong><select><option value="1" selected="">1 Day</option><option value="2">1 Week</option><option value="3">2 Weeks</option><option value="4">1 Month</option><option value="5">2 Months</option><option value="6">6 Months</option><option value="7">1 Year</option><option value="8">Forever</option></select></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><button class="btn btn-primary float-right" type="button" style="margin-top: 5px;">Save Changes</button></div>
+                    <div class="tab-pane" role="tabpanel" id="tab-3" style="overflow-y: auto;">
+                        <div class="table-responsive" style="width: 100%;">
+                            <table class="table">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Banned On</th>
+                                        <th>Banned Until</th>
+                                        <th>Days Left</th>
+                                        <th>Total Reports</th>
+                                        <th>Total Severity</th>
+                                        <th>By Moderator</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td><a href="#"><strong>SomeUser</strong></a></td>
+                                        <td>1/1/2020</td>
+                                        <td>3/3/2020</td>
+                                        <td>35</td>
+                                        <td>16</td>
+                                        <td>45</td>
+                                        <td><a href="#"><strong>SomeModerator</strong></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="tab-4" style="overflow-y: auto;">
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1"><a href="#"><strong>someModerator</strong></a>
+                                    <p><strong>&nbsp;Updated Priviliges for&nbsp;</strong></p><a href="#"><strong>someUser</strong></a>
+                                    <p class="text-right float-right flex-grow-1" style="font-size: 12px;">2/2/2020</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <p style="font-size: 14px;">Can Comment: OFF for - 1 Week</p>
+                            </div><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;width: 100%;">[Collapse]</a></div>
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1"><a href="#"><strong>someModerator</strong></a>
+                                    <p><strong>&nbsp;Updated Report Status for Report ID:&nbsp;</strong></p><a href="#"><strong>123113</strong></a>
+                                    <p class="text-right float-right flex-grow-1" style="font-size: 12px;">2/2/2020</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <p style="font-size: 14px;">Report Type: Inappropriate PFP<br>Reported User: badUser<br>Status: GUILTY<br>Submitted by: someUser<br>Submitted on: 1/1/2020</p>
+                            </div><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;width: 100%;">[Collapse]</a></div>
+                        <div class="d-flex flex-column report-detail" style="background-color: #ddd;padding: 5px;margin-top: 10px;margin-bottom: 10px;">
+                            <div class="d-flex flex-column report-header" style="border-bottom: solid;border-color: #ccc;margin-bottom: 5px;">
+                                <div class="d-flex flex-row flex-grow-1"><a href="#"><strong>someModerator</strong></a>
+                                    <p><strong>&nbsp;Reverted Changes made on&nbsp;</strong></p><a href="#"><strong>Twisted Falls</strong></a>
+                                    <p class="text-right float-right flex-grow-1" style="font-size: 12px;">2/2/2020</p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row flex-grow-1 report-body" style="margin-bottom: 5px;margin-top: 5px;">
+                                <p style="font-size: 14px;">Editor: someUser<br>Edit Date: 1/1/2020</p>
+                            </div><a class="text-center flex-grow-1 align-self-end" href="#" style="font-size: 12px;width: 100%;">[Collapse]</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/multirange.js"></script>
+    <script src="assets/js/Toggle-Checkbox.js"></script>
+</body>
+
+</html>

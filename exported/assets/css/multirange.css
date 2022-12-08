@@ -1,0 +1,388 @@
+/* IE */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange {
+    padding: 0;
+    vertical-align: top;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange::-ms-track {
+    color: transparent;
+    background: transparent;
+    border: 0;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange::-ms-fill-lower {
+    background: transparent;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange::-ms-fill-upper {
+    background: transparent;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.original {
+    position: absolute;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.original::-ms-track {
+    background: hsl(190, 80%, 40%);
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.original::-ms-fill-lower {
+    background: #ddd;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.middle {
+    position: absolute;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.ghost {
+    position: relative;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.ghost::-ms-fill-upper {
+    background: #ddd;
+  }
+}
+
+/* Switch colors when inputs are switched, see JavaScript */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.switched.original::-ms-fill-lower {
+    background: transparent;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.switched.original::-ms-fill-upper {
+    background: #ddd;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.switched.ghost::-ms-fill-upper {
+    background: transparent;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  input[type="range"].multirange.switched.ghost::-ms-fill-lower {
+    background: #ddd;
+  }
+}
+
+#page-contents {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 10px;
+}
+
+.spot-image {
+  width: 120px;
+}
+
+.spot-data {
+  background-color: #ccc;
+  /*display: block;*/
+}
+
+.hidden {
+  display: none !important;
+}
+
+.table td, .table th {
+  font-size: 12px;
+}
+
+.h2, h2 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: georgia;
+  margin-bottom: 0px;
+}
+
+.h3, h3 {
+  font-family: georgia;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.table-responsive {
+  table-layout: fixed;
+  width: 200px;
+}
+
+#location-data p {
+  font-size: 12px;
+}
+
+#location-address p {
+  font-size: 12px;
+}
+
+table {
+  margin-bottom: 0px !important;
+}
+
+.btn.btn-primary.dropdown-toggle.float-right {
+  width: 40px;
+  background-color: white;
+  border: none;
+}
+
+.btn.btn-primary:after {
+  content: none;
+}
+
+.fa.fa-align-justify:before {
+  color: rgb(0,0,0);
+}
+
+.float-left.spot-container {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.d-flex.comment-area img {
+  width: 75px;
+  height: 75px;
+}
+
+.comment-area.form-control {
+  height: 75px;
+  margin-bottom: 5px;
+}
+
+.comment-box img {
+  width: 75px;
+  height: 75px;
+}
+
+.comment-box.post-date {
+  font-size: 15px;
+}
+
+.float-left.post-date {
+  font-size: 15px;
+}
+
+.post-info {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.comment-info {
+  font-size: 12px;
+}
+
+#comment-container {
+}
+
+.post-comment {
+  margin-bottom: 10px;
+}
+
+#spot-section {
+  margin-top: 20px;
+}
+
+#comment-section {
+  margin-top: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.form-control.float-right {
+  width: 100px;
+}
+
+#mapinfo {
+  margin-top: 10px;
+  height: 90%;
+  min-height: 400px;
+}
+
+iframe {
+  height: 100%;
+}
+
+#comment-container h1 {
+  font-size: 25px;
+}
+
+#location-section {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+#spot-section {
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.spot-selected {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.btn-checkbox {
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-checkbox {
+  width: 50%;
+}
+
+.data-container {
+  width: 30%;
+  overflow: hidden;
+}
+
+.data-container-half {
+  width: 40%;
+}
+
+#mapinfo p {
+  font-size: 10px;
+}
+
+#edit-location-img {
+  width: 140px;
+  border: solid;
+  border-width: 1px;
+}
+
+#edit-spot-img {
+  width: 140px;
+  border: solid;
+  border-width: 1px;
+}
+
+#edit-location-upload-photo {
+  width: 80%;
+  height: 30px;
+}
+
+#edit-spot-listview button {
+  width: 100%;
+  text-align: left;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+#edit-profile-tabs button:active {
+  border: none;
+}
+
+#edit-profile-tabs button {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+#edit-profile-tabs li {
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 0px;
+}
+
+#page-general-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+}
+
+#message-conversation-list button {
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+}
+
+#message-conversation-list {
+  margin: 0px;
+  padding: 0px;
+}
+
+#message-conversation-list img {
+  width: 50px;
+  height: 50px;
+}
+
+#message-item img {
+  height: 50px;
+  width: 50px;
+}
+
+#message-item li:last-child {
+  border: none;
+}
+
+.list-group-item:last-child {
+  border: none !important;
+}
+
+#profile-info-bar img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: solid;
+}
+
+.contribution-item img {
+  height: 70px;
+  width: 70px;
+  margin-right: 10px;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.is-selected {
+  background-color: #ddd;
+}
+
+.report-body img {
+  width: 70px;
+  height: 70px;
+  margin-right: 5px;
+}
+
+.selected-report-btn {
+  background-color: #aaa;
+  color: #000;
+  font-weight: bold;
+  border: none;
+}
+
+.toggle-handle {
+  height: 200% !important;
+}
+
